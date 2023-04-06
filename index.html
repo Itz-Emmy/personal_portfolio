@@ -6,6 +6,7 @@
 	<title>Emmanuel Agbonyeme</title>
 	<link rel="stylesheet" type="text/css" href="./css/styles.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
 
@@ -14,10 +15,13 @@
 	<header>
 
 		<nav>
-
+			<div class="nav-logo">
+				<a href="#"><img src="./images/mylogo.png" alt="Logo"></a>	
+				
+			</div>
 			<div id="header-nav">
-				<a href="#"><img src="./images/mylogo.png" alt="Logo"></a>
-				<ul>
+
+				<ul class="nav-bar-list">
 					<li>
 						<a href="#home"><i class="icon fa fa-home fa-2x"></i><span>Home</span></a>
 					</li>
@@ -46,14 +50,15 @@
 			</div>
 			
 		</nav>
-
 		<div id="home">
 			<div id="hero-container">
 				<div id="intro">
 					<h1 class="welcome">WELCOME</h1>
 					<h2>Hi <span class="wave-emoji">&#128075;</span> I'm Emmanuel </h2>
-					<h3>A Full Stack Web Developer</h3>
-					<a href="#">My Resume</a>
+					<h3>A Web Developer</h3>
+					<div class="resume">
+						<a href="#">My Resume</a>
+					</div>
 				</div>
 
 				<div id="hero-image">
@@ -63,9 +68,8 @@
 				<div id="social-links">
 					<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 					<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-				</div>	
+				</div> 
 			</div>
-
 		</div>
 	</header>
 
@@ -76,7 +80,7 @@
 
 	<main>
 		<section id="expertise">
-
+			
 			<h3>MY EXPERTISE</h3>
 			<h2>What I Do</h2>
 
@@ -109,8 +113,7 @@
 					</p>
 					
 				</div>		
-			</div>
-			
+			</div>		
 		</section>
 
 		<section id="portfolio-section">
@@ -122,7 +125,7 @@
 				</div>
 
 				<div class="completed-project">
-					<div>
+					<div class="completed-project-header">
 						<h3>6</h3>
 						<p>Completed Projects</p>
 					</div>
@@ -178,7 +181,7 @@
 				</div>
 
 				<div class="second-three-portfolio">
-					<div class="first-project">
+					<div class="second-project">
 						<img src="./images/tribute.png" alt="Image of a tribute page">
 						<div class="details">
 							<div>
@@ -190,7 +193,7 @@
 						</div>
 					</div>
 
-					<div class="first-project">
+					<div class="second-project">
 						<img src="./images/documentation.png" alt="Image of a documentation page">
 						<div class="details">
 							<div>
@@ -203,7 +206,7 @@
 
 					</div>
 
-					<div class="first-project">
+					<div class="second-project">
 						<img src="./images/productlanding.png" alt="Image of a product landing page">
 						<div class="details">
 							<div>
@@ -237,7 +240,10 @@
 					</p>
 
 					<div class="full-stack">
-						<img src="./images/download.png" alt="HTML5, CSS3 & Javascript logos combined">
+						<div class="full-stack-image">
+							<img src="./images/download.png" alt="HTML5, CSS3 & Javascript logos combined">
+							
+						</div>
 						<div>
 							<h4>Full Stack Web Developer</h4>
 							<p>Top Rated</p>
@@ -246,26 +252,67 @@
 				</div>
 
 			</div>
-
 		</section>
 
 		<section id="resume">
-			
-			<div class="resume-container">
-				
-				<div class="resume-heading-container">
-					<div class="biography">
-						<a href="#resume">BIOGRAPHY <strong>01</strong></a>
-					</div>
-					<div class="skills">
-						<a href="#resume">SKILLS <strong>02</strong></a>
-					</div>
-					<div class="education">
-						<a href="#resume">EDUCATION <strong>03</strong></a>
-					</div>
-					
+			<div class="resume-heading-container">
+
+				<div class="biography active">
+					<a href="#resume">
+
+						<div class="biography-link">
+							<div>
+							<p>BIOGRAPHY</p>
+																
+							</div>
+
+							<div>
+							<p>01</p>
+															
+							</div>
+						</div>	
+
+					</a>
 				</div>
 
+
+				<div class="skills">
+					<a href="#resume">
+
+						<div class="skills-link">
+							<div>
+							<p>SKILLS</p>
+																
+							</div>
+							<div>
+							<p>02</p>
+								
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="education">
+					<a href="#resume">
+
+						<div class="education-link">
+
+							<div>
+							<p>EDUCATION</p>
+								
+							</div>
+
+							<div>
+							<p>03</p>
+								
+							</div>
+
+						</div>
+					</a>
+				</div>
+
+			</div>
+			
+			<div class="resume-container">
 				<div class="resume-details-container">
 					
 					<div class="resume-detail-left">
@@ -273,12 +320,12 @@
 							<p class="info">Name</p>	
 							<p class="resume-detail-left-value">Emmanuel Nereus Agbonyeme</p>
 						</div>
-						<hr>
+						
 						<div class="second-detail">
 							<p class="info">Email</p>
 							<p class="resume-detail-left-value">nereus4luv@gmail.com</p>
 						</div>
-						<hr>
+						
 						<div class="third-detail">
 							<p class="info">Birthday</p>
 							<p class="resume-detail-left-value">16th June</p>
@@ -293,12 +340,12 @@
 							<p class="info">Address</p>
 							<p class="resume-detail-right-value">Akure</p>
 						</div>
-						<hr>
+						
 						<div class="fifth-detail">
 							<p class="info">Phone</p>
 							<p class="resume-detail-right-value">+(234)7033730097</p>
 						</div>
-						<hr>
+						
 						<div class="sixth-detail">
 							<p class="info">Freelance</p>
 							<p class="resume-detail-right-value">Available</p>
@@ -311,11 +358,10 @@
 
 
 			</div>
-
 		</section>
 
-		<section id="contact">
-			<h3 class="contact-shadow">CONTACT</h3>
+		<!-- <section id="contact">
+			
 
 			<div class="footer-contact">
 
@@ -364,14 +410,14 @@
 			</div>
 
 
-		</section>
+		</section> -->
 
 	</main>
 
 	<!-- Main section ends here -->
 
 	<!-- Footer section starts here -->
-	<footer class="footer-section">
+	<!-- <footer class="footer-section">
 		
 		<div class="footer-container">
 			
@@ -388,7 +434,7 @@
 
 		</div>
 
-	</footer>
+	</footer> -->
 	
 
 	<!-- Footer section ends here -->
