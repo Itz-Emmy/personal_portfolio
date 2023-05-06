@@ -24,6 +24,7 @@ nav img {
 nav {
 	margin: 0;
 	position: fixed;
+	height: 100vh;
 }
 
 #header-nav {
@@ -106,8 +107,9 @@ background-color: #fff;
 	margin-bottom: 10px;
 	position: relative;
 	top: -25px;
-	left: 12px;
-	color: #202942;		
+	color: #202942;
+	animation: slideInFromTop 2s ease-in-out;
+		
 }
 
 #hero-container #intro h2 span {
@@ -119,6 +121,8 @@ background-color: #fff;
 	font-size: 30px;
 	position: relative;
 	left: 15px;	
+	
+
 }
 
 #hero-container #intro a {
@@ -132,23 +136,29 @@ background-color: #fff;
 	padding: 20px 45px;
 	background-color: #040836;
 	border-radius: 35px;
+	animation: slideInFromRight 2s ease-in-out;
+
 }
 
 #hero-image {
-	position: absolute;
-	top: -350px;
-	left: 500px;
+	margin-top: -350px;
+	animation: slideInFromBottom 2s ease-in-out;
+
 }
 
 #hero-image img {
 	width: 600px;
 	height: 800px;
 }
+
+
+
 #social-links {
 	display: flex;
 	flex-direction: column;
 	position: absolute;
 	left: 1100px;
+	animation: slideInFromTop 2s ease-in-out;
 }
 
 #social-links a .fa {
@@ -273,6 +283,8 @@ background-color: #fff;
 	margin-left: 150px;
 	margin-top: 50px;
 	margin-right: 50px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
 }
 
 #projects img {
@@ -281,20 +293,18 @@ background-color: #fff;
 	position: relative;
 }
 
-.first-three-portfolio, .second-three-portfolio {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 20px;
-}
 
 .details {
 	display: none;
+	width: 100%;
 }
+
 
 .details p {
 	margin-left: 0;
 	margin-bottom: 8px;
 	margin-right: 180px;
+	
 }
 
 .details i {
@@ -303,7 +313,8 @@ background-color: #fff;
 	border: 1px solid #666666;
 	padding: 15px;
 	color: #666;
-	margin-left: 18px;
+	position: relative;
+	left: 35px;
 }
 
 .details a {
@@ -319,9 +330,9 @@ background-color: #fff;
 	display: flex;
 	background-color: #fff;
 	padding: 14px;
-	margin-top: -80px;
+	margin-top: -75px;
 	position: relative;
-	max-width: 100%;
+	width: 97%;
 }
 
 /*About section style*/
@@ -340,6 +351,8 @@ background-color: #fff;
 .about-image {
 	background-color: #D2063B;
 	border-radius: 100%;
+	
+
 }
 
 .about-image img {
@@ -349,6 +362,7 @@ background-color: #fff;
 
 .about-me {
 	margin-left: 130px;
+
 }
 
 .about-me h3 {
@@ -395,6 +409,7 @@ background-color: #fff;
 }
 
 .resume-container {
+	width: 100%;
 	display: flex;
 	background-color: #F4F7ED;
 }
@@ -434,17 +449,23 @@ background-color: #fff;
 	justify-content: space-between;
 }
 .biography-link div, .skills-link div, .education-link div {
-  flex: 1; 
-  margin-right: 80px; 
+	margin-right: 80px; 
+	
 }
 
 .biography-link div:last-child, .skills-link div:last-child, .education-link div:last-child {
-  margin-right: 0; 
+	margin-right: 0; 
+	
 }
-.active{
+.active {
 	background-color: #040836;
 	border-radius: 40px;
 	color: #fff;
+	
+}
+
+.active::before {
+	color: inherit;
 }
 
 .active p {
@@ -455,7 +476,7 @@ background-color: #fff;
 	content: "";
 	position: absolute;
 	background-color: #000;
-	color: currentColor;
+	color: #fff;
 	width: 45px;
 	height: 1px;
 	top: 28px;
@@ -487,6 +508,7 @@ background-color: #fff;
 .skills a:hover, .education a:hover, .biography a:hover {
 	background-color: #040836;
 	color: #fff;
+    return render(request, 'blog/update_post.html', {'post':post})
 	border-radius: 3.125em;
 }*/
 
@@ -530,7 +552,10 @@ background-color: #fff;
 	margin-left: 150px;
 }
 
-
+.hidden {
+    visibility: hidden;
+    height: 0;
+}
 
 .contact-form {
 	background-color: #F4F6EE;
@@ -672,14 +697,14 @@ input:focus, textarea:focus {
 /*Footer Style*/
 footer {
 	background-color: #040836;
-	height: 100px;
+	height: 80px;
 	margin-top: 80px;
 }
 
 .footer-container {
 	display: flex;
 	justify-content: space-between;
-
+	margin-left: 50px;
 }
 
 .copyright-container p {
@@ -693,6 +718,7 @@ footer {
 .footer-links {
 	margin-top: 50px;
 }
+
 .footer-links a {
 	margin: 15px;
 	
@@ -701,27 +727,111 @@ footer {
 	flex-direction: space-around;
 }
 
+/* Animation */
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+    
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+    
+}
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+    
+}
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+    
+}
+
+/*Styling for Tablet */
 
 
-/*Styling for mobile phone*/
+@media only screen and (max-width: 850px) {
 
-
-@media only screen and (max-width: 480px) {
+	.nav-logo {
+		display: none;
+	}
 
 	nav {
 		position: relative;
-
+		height: auto;
 	}
+	.line {
+        width: 30px;
+        height: 5px;
+        background: #000;
+        margin: 5px;
+    }
 
-	.nav-logo {
-		width: 100vw;
+	.hamburger {
+        position: absolute;
+		
+        cursor: pointer;
+        left: 90%;
+        top: 15%;
+        transform: translate(-5%, -50%);
+        z-index: 5;
+    }
+
+	.nav-links {
+        padding: 15px;
+        width: 100%;
+		padding-top: 80px;
+        list-style: none;
+        transition: all 1s ease-out;
+        pointer-events: none;
 		background-color: #fff;
-		height: 6.25em;
+		color: #333;
+		z-index: 2;
 		text-align: center;
+    }
+
+	.nav-links li {
+		padding: 15px
 	}
 
+	.nav-links a {
+		text-decoration: none;
+		text-transform: uppercase;	
+	}
+
+	#home {
+		z-index: -1;
+
+	}
 	#intro {
-		width: 95vw;
+		width: 90vw;
+	}
+	#hero-container #intro h3 {
+		left: 0;
 	}
 	#hero-container #intro a {
 		left: 0;
@@ -734,255 +844,387 @@ footer {
 	}
 
 	#hero-container {
-		
 		left: 0;
-		top: 220px;
+		top: 250px;
+		z-index: -1;
+
 	}
 
-	#header-nav {
+	#hero-image {
 		position: absolute;
-		
-	}	
+		margin-top: 0;
+		top: 130px;
+		left: 170px;
+	}
+
 	#header-nav li {
 		display: none;
 	}
 
 	#hero-container #intro h2 {
 		text-align: center;
-		font-size: 2.5em;
 		top: 0;
 	}
 
+
+	#hero-container #intro h3 {
+		font-size: 2em;
+		text-align: center;
+	}
+
+	#hero-image img {	
+		width: 100%;
+		height: auto;
+	}
+
+	.welcome{
+		display: none;
+	}
+
+	.nav-bar-list{
+		display: none;
+	}
+
+	#video-play-icon {
+		display: none;
+	}
+
+	#social-links{
+		display: none;
+	}
+
+	#expertise {
+		top: 60rem;
+		margin: 0;
+		background-color: #fff;
+		z-index: -1;
+	}
+
+
+	#expertise h3 {
+		padding-top: 50px;
+	}
+
+	#skills {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	#skills #web-design, #app-design, #ux-design {
+		text-align: center;
+		align-items: center;
+
+	}
+
+	#skills p {
+		padding: 10px 30px;
+		margin: 0;
+		font-size: 1.5rem;
+	}
+
+	#portfolio-section {
+		background-color: #fff;
+		position: relative;
+		top: 200px;
+	}
+
+	#portfolio-container {
+		flex-direction: column;
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-top: 50em;
+	}
+
+	.portfolio-head h3 {
+		font-size: 1.8rem;
+		text-align: center;
+		font-weight: 700;
+		line-height: 1.5;
+	}
+
+	.portfolio-head p {
+		margin-top: 50px;
+		text-align: center;
+		font-weight: normal;
+		font-size: 1.5em;
+	}
+
+	#projects img {
+		width: 100%;
+		
+	}
+
+	.details i {
+		left: 400px;
+		
+	}
+
+	.completed-project {
+		margin-left: 10px;
+		flex-direction: column;
+	}
+
+	.completed-project {
+		font-size: 1.4rem;
+	}
+
+
+	.completed-project hr {
+		height: auto;
+	}
+
+	.completed-project-header {
+		padding: 25px;
+		text-align: center;
+	}
+
+	.completed-project h3, .positive-rating h3 {
+		font-size: 2em;
+		text-align: center;
+		margin-top: 25px;
+	}
+
+
+	.completed-project p {
+		text-align: center;
+	}
+
+
+
+	#about {
+		
+		margin: 350px 0 0 ;
+	}
+
+	.about-image img {
+		width: 100%;
+		bottom: 12rem;
+	}
+
+	.about-image {
+		margin: 10px 20px 0px 20px;
+		
+	}
+	.about-me {
+		margin: 10px;
+		text-align: center;
+		font-size: 1.6rem;
+	}
+
+	.about-container {
+		flex-direction: column;
+	}
+
+	.full-stack {
+		flex-direction: column;
+		justify-content: center;
+		
+	}
+
+	.full-stack h4 {
+		font-size: 2.3rem;
+	}
+
+	.full-stack p {
+		font-size: 1.6rem;
+	}
+
+	.footer-contact {
+		flex-direction: column;
+	}
+
+
+	#resume {
+		margin-left: 10px;
+		margin-top: 100px;
+		margin-right: 10px;
+
+	}
+	.resume-details-container {
+		flex-direction: column;
+	}
+
+	.resume-container {
+		flex-direction: column;
+		height: auto;
+	}
+
+
+	.resume-detail-left {
+		width: auto;
+		margin: 0;
+	}
+
+	.resume-detail-right {
+		width: 100%;
+		margin: 0;
+	}
+
+	.first-detail, .second-detail, .third-detail, .fourth-detail, .fifth-detail, .sixth-detail {
+		flex-direction: column;
+		font-size: 1.6rem;
+	}
+
+	#contact {
+		margin: 10px;
+	}
+
+	.contact-form {
+		padding:10px;
+		width: 100%;
+		margin-top: 60px;
+		background-color: rgba(244, 247, 237, 0.5);
+	}
+
+	.contact-form h3 {
+		font-size: 1.9rem;
+	}
+	.contact-form p {
+		font-size: 1.5rem;
+	}
+
+	input[id="name"],input[id="email"], input[id="phone"] {
+		width: 95%;	
+	}
+
+	textarea {
+		width: 95%;
+	}
+
+	button {
+		margin-left: 50px;
+	}
+
+	#skills #web-design, #app-design, #ux-design {
+		padding: 10px;
+	}
+
+	#projects {
+		margin: 10px;
+	}
+
+	.contact-details h3 {
+		font-size: 1.7rem;
+	}
+
+	.contact-details p {
+		font-size: 1.4rem;
+	}
+
+	.footer-container {
+		display: block;
+		justify-content: space-between;
+		margin-left: -10px;
+	}
+
+
+	.copyright-container {
+		margin-left: 25px;
+		
+	}
+	.copyright-container p {
+		padding-top: 25px;
+		font-size: 1.3rem;
+	}
+	.footer-links {
+		display: none;
+	}
+
+}
+
+
+/*Styling for Mobile */
+
+
+@media only screen and (max-width: 480px) {
+
 	#hero-image {
-		top: 120px;
-		left: -10px;
-/*		position: relative;*/
-}
+		top: 150px;
+		left: 30px;
+	}
 
-#hero-container #intro h3 {
-	font-size: 2em;
-	text-align: center;
-}
-
-#hero-image img {
-/*		width: 24em;*/
-max-width: 100%;
-height: 35rem;
-}
-
-.welcome{
-	display: none;
-}
-
-
-
-.nav-bar-list{
-	display: none;
-}
-
-#video-play-icon {
-	display: none;
-}
-
-#social-links{
-	display: none;
-}
-
-#expertise {
-	top: 800px;
-	margin: 0;
-	background-color: #fff;
-
-}
-
-
-#expertise h3 {
-	padding-top: 50px;
-}
-
-#skills {
-	flex-direction: column;
-	text-align: center;
-}
-
-#skills #web-design, #app-design, #ux-design {
-	text-align: center;
-	align-items: center;
-
-
-}
-
-#web-design p {
-	padding: 10px 30px;
-	margin: 0;
-}
-
-#portfolio-section {
-	background-color: #fff;
-
-}
-
-#portfolio-container {
-	flex-direction: column;
-	margin-left: 10px;
-	margin-right: 10px;
-	margin-top: 50em;
-}
-
-.portfolio-head h3 {
-	font-size: 1.8rem;
-	text-align: center;
-	font-weight: 700;
-	line-height: 1.5;
-}
-
-.portfolio-head p {
-	margin-top: 50px;
-	text-align: center;
-	font-weight: normal;
-	font-size: 1.5em;
-}
-
-#projects img {
-	max-width: 100%;
-	width: 100%;
-}
-
-.completed-project {
-	margin-left: 10px;
-	flex-direction: column;
-}
-
-.completed-project hr {
-	height: auto;
-}
-.completed-project-header {
-	padding: 25px;
-	text-align: center;
-}
-.completed-project h3, .positive-rating h3 {
-	font-size: 2em;
-	text-align: center;
-	margin-top: 25px;
-}
-
-
-.completed-project p {
-	text-align: center;
-}
-
-.first-three-portfolio, .second-three-portfolio {
-	flex-direction: column;
-}
-
-#about {
 	
-	margin: 0;
-}
-
-.about-image img {
-	max-width: 100%;
-}
-
-.about-image {
-	margin: 90px 20px 0px 20px;
+	#expertise {
+		top: 58rem;
+	}
 	
-}
-.about-me {
-	margin: 10px;
-	text-align: center;
-}
-
-.about-container {
-	flex-direction: column;
-	margin-top: 0;
-}
-
-.full-stack {
-	flex-direction: column;
-	justify-content: center;
+	.first-project, .second-project {
+		margin: 5px;
+		display: grid;
+		grid-column: 1/4;
+	}
 	
-}
-
-
-.footer-contact {
-	flex-direction: column;
-}
-
-
-.resume-heading-container {
-	position: relative;
-	left: 0;
-	flex-direction: column;
-	background-color: transparent;
-	max-width: 100%;
-	margin-top: -50px;
-}
-
-
-#resume {
-	margin-left: 10px;
-	margin-top: 100px;
-	margin-right: 10px;
-
-}
-.resume-details-container {
-	flex-direction: column;
-}
-
-.resume-container {
-	flex-direction: column;
-	height: auto;
-}
-.resume-detail-left {
-	width: auto;
-	margin: 0;
-}
-
-.resume-detail-right {
-	width: 100%;
-	margin: 0;
-}
-
-.first-detail, .second-detail, .third-detail, .fourth-detail, .fifth-detail, .sixth-detail {
-	flex-direction: column;
-}
-.biography {
-	margin-left: 10px;
-}
-
-#contact {
-	margin-left: 10px;
-}
-
-.contact-form {
-
-	padding:50px;
-	width: 80vw;
-	margin-top: 60px;
-	background-color: rgba(244, 247, 237, 0.5);
+	#projects img {
+		height: 350px;
+	}
 
 }
 
-input[id="name"] {
-	width: 280px;	
-}
+@media only screen and (max-width: 1024px) {
 
-textarea {
+	.nav-logo, #header-nav {
+		display: none;
+	}
 
-	width: 280px;
-	height: 300px;
+	#hero-container {
+		left: 50px;
+	}
 
-} 
+	#social-links {
+		left: 950px;
+	}
+	
+	#expertise {
+		
+		margin: 0 20px;
+		
+	}
 
-#skills #web-design, #app-design, #ux-design {
-	padding: 10px;
-}
+	#projects {
+		margin-left: 10px;
+		margin-right: 0;
+		
+	}
+
+	#projects img {
+		width: 100%;
+	}
 
 
-#projects {
-	margin: 10px;
-}
+	#portfolio-container {
+		margin-left: 50px;
+	}
 
+	.completed-project {
+		margin-left: 10px;
+	}
+	.first-project:hover .details, .second-project:hover .details {
+		display: none;
+	}
 
+	.first-project, .second-project {
+		margin: 5px;
+		
+	}
+
+	#about {
+		margin-left: 20px;
+	}
+
+	#resume {
+		margin-left:  20px;
+	}
+	
+	.resume-details-container {
+		width: 100%;
+	}
+
+	#contact {
+		margin-left: 20px;
+	}
+
+	.footer-contact {
+		justify-content: center;
+	}
+	
 }
