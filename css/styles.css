@@ -27,6 +27,9 @@ nav {
 	height: 100vh;
 }
 
+.nav-links {
+	display: none;
+}
 #header-nav {
 /*	position: fixed;*/
 width: 6.25em;
@@ -349,15 +352,20 @@ background-color: #fff;
 }
 
 .about-image {
-	background-color: #D2063B;
+	background: linear-gradient(25deg, rgba(198,120,127,1) 18%, rgba(82,77,77,1) 56%);
 	border-radius: 100%;
 	
+	width: 100%;
 
 }
 
+
+
+
 .about-image img {
 	position: relative;
-	bottom: 6.25em;
+	top: 5px;
+	
 }
 
 .about-me {
@@ -781,46 +789,69 @@ footer {
 	}
 
 	nav {
-		position: relative;
+		position: absolute;
 		height: auto;
 	}
+
 	.line {
-        width: 30px;
+        width: 40px;
         height: 5px;
-        background: #000;
-        margin: 5px;
+        background: #333;
+        margin: 5px 0;
+		transition: transform 0.2s ease-out;
     }
 
 	.hamburger {
-        position: absolute;
-		
-        cursor: pointer;
+        position: fixed;
+		cursor: pointer;
         left: 90%;
-        top: 15%;
-        transform: translate(-5%, -50%);
-        z-index: 5;
+        top: 40px;
+		z-index: 5;
     }
 
+	.nav-container.is-active .hamburger .line:nth-child(1) {
+		transform: rotate(45deg) translate(5px, 5px);
+		width: 30px;
+	}
+
+	.nav-container.is-active .hamburger .line:nth-child(2) {
+		opacity: 0;
+	}
+
+	.nav-container.is-active .hamburger .line:nth-child(3) {
+		transform: rotate(-45deg) translate(5px, -5px);
+		width: 30px;
+		
+	}
+
 	.nav-links {
-        padding: 15px;
-        width: 100%;
-		padding-top: 80px;
+		display: none;
+		position: fixed;
+
+		padding-top: 150px;
+		margin-top: -40px;
+        width: 100vw;
         list-style: none;
-        transition: all 1s ease-out;
-        pointer-events: none;
 		background-color: #fff;
-		color: #333;
 		z-index: 2;
+		/* transform: translate(-50%, -50%); */
 		text-align: center;
     }
 
 	.nav-links li {
-		padding: 15px
+		padding: 15px;
+		border-top: 0.5px solid #333;
 	}
 
 	.nav-links a {
+		color: #333;
 		text-decoration: none;
 		text-transform: uppercase;	
+		font-weight: bold;
+	}
+
+	.nav-links.isActive {
+		display: block;
 	}
 
 	#home {
@@ -993,17 +1024,21 @@ footer {
 
 	#about {
 		
-		margin: 350px 0 0 ;
+		margin: 500px 0 0;
 	}
 
 	.about-image img {
 		width: 100%;
+		top: 5px;
 		bottom: 12rem;
 	}
 
 	.about-image {
-		margin: 10px 20px 0px 20px;
 		
+		margin-right: 15px;
+		border-radius: 100%;
+		margin: 0 auto;
+				
 	}
 	.about-me {
 		margin: 10px;
@@ -1138,14 +1173,15 @@ footer {
 
 @media only screen and (max-width: 480px) {
 
-	#hero-image {
-		top: 150px;
-		left: 30px;
+	
+
+	#hero-container {
+		margin-left: -30px;
 	}
 
-	
-	#expertise {
-		top: 58rem;
+	#hero-image {
+		top: 170px;
+		left: 0;
 	}
 	
 	.first-project, .second-project {
@@ -1158,73 +1194,4 @@ footer {
 		height: 350px;
 	}
 
-}
-
-@media only screen and (max-width: 1024px) {
-
-	.nav-logo, #header-nav {
-		display: none;
-	}
-
-	#hero-container {
-		left: 50px;
-	}
-
-	#social-links {
-		left: 950px;
-	}
-	
-	#expertise {
-		
-		margin: 0 20px;
-		
-	}
-
-	#projects {
-		margin-left: 10px;
-		margin-right: 0;
-		
-	}
-
-	#projects img {
-		width: 100%;
-	}
-
-
-	#portfolio-container {
-		margin-left: 50px;
-	}
-
-	.completed-project {
-		margin-left: 10px;
-	}
-	.first-project:hover .details, .second-project:hover .details {
-		display: none;
-	}
-
-	.first-project, .second-project {
-		margin: 5px;
-		
-	}
-
-	#about {
-		margin-left: 20px;
-	}
-
-	#resume {
-		margin-left:  20px;
-	}
-	
-	.resume-details-container {
-		width: 100%;
-	}
-
-	#contact {
-		margin-left: 20px;
-	}
-
-	.footer-contact {
-		justify-content: center;
-	}
-	
 }
