@@ -800,7 +800,7 @@ footer {
 	.hamburger {
         position: fixed;
 		cursor: pointer;
-        left: 90%;
+        left: 85%;
         top: 40px;
 		z-index: 5;
     }
