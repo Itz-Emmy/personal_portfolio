@@ -560,10 +560,6 @@ background-color: #fff;
 	margin-left: 150px;
 }
 
-.hidden {
-    visibility: hidden;
-    height: 0;
-}
 
 .contact-form {
 	background-color: #F4F6EE;
@@ -861,9 +857,11 @@ footer {
 	#intro {
 		width: 90vw;
 	}
+
 	#hero-container #intro h3 {
 		left: 0;
 	}
+	
 	#hero-container #intro a {
 		left: 0;
 		top: 0;
@@ -875,7 +873,7 @@ footer {
 	}
 
 	#hero-container {
-		left: 0;
+		left: 25px;
 		top: 250px;
 		z-index: -1;
 
@@ -885,7 +883,7 @@ footer {
 		position: absolute;
 		margin-top: 0;
 		top: 130px;
-		left: 170px;
+		left: 100px;
 	}
 
 	#header-nav li {
@@ -1138,6 +1136,9 @@ footer {
 		margin: 10px;
 	}
 
+	.contact-details {	
+		left: 0;
+	}
 	.contact-details h3 {
 		font-size: 1.7rem;
 	}
@@ -1173,17 +1174,15 @@ footer {
 
 @media only screen and (max-width: 480px) {
 
-	
-
-	#hero-container {
-		margin-left: -30px;
-	}
-
 	#hero-image {
 		top: 170px;
-		left: 0;
+		left: 5px;
 	}
 	
+	#expertise {
+		top: 57rem;
+	}
+
 	.first-project, .second-project {
 		margin: 5px;
 		display: grid;
