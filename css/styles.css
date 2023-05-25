@@ -1192,5 +1192,27 @@ footer {
 	#projects img {
 		height: 350px;
 	}
-
 }
+
+/* @media only screen and (max-width: 360px) {
+	#hero-image {
+		top: 220px;
+		
+	}
+
+	#expertise {
+		top: 55rem;
+	}
+	
+	#about {
+		margin-top: 380px;
+	}
+
+	#expertise {
+		top: 25rem;
+	}
+	
+	#contact {
+		margin: 0px;
+	}
+} */
