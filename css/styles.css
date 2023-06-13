@@ -810,9 +810,6 @@ footer {
 		display: none;
 	}
 
-	#video-play-icon {
-		display: none;
-	}
 
 	#social-links{
 		display: none;
@@ -885,7 +882,12 @@ footer {
 
 	#about {
 		
-		margin: 500px 0 0;
+		margin: 200px 0 0;
+	}
+
+	#about a {
+		left: 0;
+		
 	}
 
 	.about-image img {
@@ -989,8 +991,8 @@ footer {
 		
 	}
 	.copyright-container p {
-		padding-top: 25px;
-		font-size: 1.3rem;
+		padding: 15px;
+		font-size: 1rem;
 	}
 	.footer-links {
 		display: none;
@@ -1019,9 +1021,6 @@ footer {
 		grid-column: 1/4;
 	}
 	
-	#projects img {
-		height: 350px;
-	}
 }
 
 @media only screen and (max-width: 375px) {
@@ -1070,7 +1069,7 @@ footer {
 		flex-direction: column;
 	}
 	.about-image {
-		width: 60%;
+		width: 90%;
 	}
 	.about-me {
 		margin-left: 0;
