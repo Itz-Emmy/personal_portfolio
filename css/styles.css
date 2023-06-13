@@ -297,9 +297,11 @@ ul.nav-bar-list {
 .details div {
 	
     display: flex;
-	justify-content: space-between;
-	width: 360px;
 	height: 30px;
+}
+
+.details div:nth-child(2) {
+	margin-left: auto;
 }
 
 .details div i {
@@ -342,7 +344,7 @@ ul.nav-bar-list {
 .first-project:hover .details, 
 .second-project:hover .details {
     display: flex;
-    justify-content: space-between;
+    
     background-color: #fff;
     padding: 14px;
     margin-top: -60px;
@@ -879,12 +881,7 @@ footer {
 		width: 100%;
 		
 	}
-
-	.details i {
-		left: 400px;
-		
-	}
-
+	
 
 	#about {
 		
@@ -1088,8 +1085,4 @@ footer {
 		
 	}
 
-	#projects img {
-		height: 200px;
-	}
-	
 }
