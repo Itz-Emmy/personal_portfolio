@@ -1040,7 +1040,7 @@ footer {
 @media only screen and (max-width: 375px) {
 
 	#intro {
-		margin-left: -15px;
+		margin-left: 5px;
 	}
 	.hamburger {
 		left: 85%;
@@ -1058,7 +1058,7 @@ footer {
 		top: 50rem;
 	}
 	#hero-container {
-		left: 20px;
+		left: 0;
 	}
 	#hero-image {
 		top: 80px;
@@ -1067,7 +1067,15 @@ footer {
 
 	
 }
-
+@media only screen and (max-width: 390px) {
+	#expertise {
+		top: 51rem;
+	}
+	#hero-image {
+		top: 100px;
+		left: 0;
+	}
+}
 @media only screen and (max-width: 360px) {
 	
 	#hero-image {
