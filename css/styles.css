@@ -194,8 +194,10 @@ ul.nav-bar-list {
 
 }
 
+
 #skills {
-	display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 #skills a {
@@ -227,11 +229,14 @@ ul.nav-bar-list {
 	font-size: 3rem;
 }
 
-#skills #web-design, #app-design, #data-entry {
+#skills #web-design, 
+#app-design, 
+#data-entry {
 	display: flex;
 	flex-direction: column;
 	padding: 40px;
 	line-height: 1.5;
+	position: relative;
 }
 
 #skills hr {
@@ -240,6 +245,16 @@ ul.nav-bar-list {
 	margin-bottom: 20px;
 }
 
+#web-design::after,
+#app-design::after {
+	content: '';
+	position: absolute;
+	top: 30px;
+	bottom: 30px;
+	right: 0;
+	width: 1px;
+	background-color: #333;
+}
 /*Portolio sectino style*/
 
 #portfolio-container {
@@ -764,7 +779,7 @@ footer {
 	}
 
 	#hero-container {
-		left: 25px;
+		left: 0;
 		top: 250px;
 		z-index: -1;
 
@@ -773,8 +788,8 @@ footer {
 	#hero-image {
 		position: absolute;
 		margin-top: 0;
-		top: 130px;
-		left: 150px;
+		top: 0;
+		left: 140px;
 	}
 
 	#header-nav li {
@@ -792,7 +807,7 @@ footer {
 		text-align: center;
 	}
 
-	#hero-image img {	
+	#hero-image img {
 		width: 100%;
 		height: auto;
 	}
@@ -811,7 +826,7 @@ footer {
 	}
 
 	#expertise {
-		top: 60rem;
+		top: 51.5rem;
 		margin: 0;
 		background-color: #fff;
 		z-index: -1;
@@ -823,7 +838,7 @@ footer {
 	}
 
 	#skills {
-		flex-direction: column;
+		grid-template-columns: 1fr;
 		text-align: center;
 	}
 
@@ -966,12 +981,13 @@ footer {
 	.contact-details {	
 		margin-left: 0;
 	}
+
 	.contact-details h3 {
 		font-size: 1.7rem;
 	}
 
 	.contact-details p {
-		font-size: 1.2rem;
+		font-size: 1rem;
 	}
 
 	.footer-container {
@@ -1002,18 +1018,21 @@ footer {
 @media only screen and (max-width: 480px) {
 
 	#hero-image {
-		top: 200px;
-		left: 5px;
+		top: 60px;
+		left: 0;
 	}
 	
 	#expertise {
-		top: 57rem;
+		top: 53.45rem;
 	}
 
 	.first-project, .second-project {
 		margin: 5px;
 		display: grid;
 		grid-column: 1/4;
+	}
+	.about-image {
+		width: 90% !important;
 	}
 	
 }
@@ -1026,23 +1045,69 @@ footer {
 	.hamburger {
 		left: 85%;
 	}
+	#hero-image img {
+		width: 100%;
+		height: auto;
+	}
+	#hero-image img {
+    	width: 100%;
+    	height: auto;
+	}
+
+	#expertise {
+		top: 50rem;
+	}
+	#hero-container {
+		left: 20px;
+	}
+	#hero-image {
+		top: 80px;
+		left: 0;
+	}
+
+	
 }
 
 @media only screen and (max-width: 360px) {
+	
+	#hero-image {
+		top: 100px;
+	}
 
 	#expertise {
-		top: 55rem;
+		top: 50rem;
 	}
 
 	#projects img {
 		height: 220px;
 	}
+	
+	.myEmail i {
+		width: 50px;
+		height: 50px;
+		font-size: 1rem;
+	}
+	.myAddress i {
+		width: 50px;
+		height: 50px;
+		padding: 15px 20px 20px 20px;
+		font-size: 1.4rem;
+		border-radius: 5px;
+	}
+	.myPhoneNumber i {
+		width: 50px;
+		height: 50px;
+		font-size: 1.3rem;
+		padding: 18px 15px;
+	}
 
 }
 @media only screen and (max-width: 320px) {
-
+	#hero-image {
+		top: 105px;
+	}
 	#expertise {
-		top: 52rem;
+		top: 47rem;
 	}
 
 	#expertise h3 {
@@ -1064,7 +1129,7 @@ footer {
 		flex-direction: column;
 	}
 	.about-image {
-		width: 90%;
+		width: 60%;
 	}
 	.about-me {
 		margin-left: 0;
@@ -1079,4 +1144,30 @@ footer {
 		
 	}
 
+}
+
+@media only screen and (max-width: 280px) {
+	#hero-container #intro h2 {
+		font-size: 50px;
+	}
+	#hero-image {
+		top: 130px;
+	}
+	#expertise {
+		top: 45rem;
+	}
+	.about-me h3 {
+		color: #ff0159;
+		padding: 10px;
+		font-size: 2rem;
+	}
+	.about-me h4 {
+		font-size: 1.5rem;
+	}
+	button {
+		margin-left: 0;
+	}
+	.contact-details {
+		margin-left: -20px;
+	}
 }
